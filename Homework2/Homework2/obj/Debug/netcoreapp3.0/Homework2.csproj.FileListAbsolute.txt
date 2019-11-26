@@ -1,0 +1,11 @@
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.exe
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.deps.json
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.runtimeconfig.json
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.runtimeconfig.dev.json
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.dll
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\bin\Debug\netcoreapp3.0\Homework2.pdb
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\obj\Debug\netcoreapp3.0\Homework2.csprojAssemblyReference.cache
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\obj\Debug\netcoreapp3.0\Homework2.AssemblyInfoInputs.cache
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\obj\Debug\netcoreapp3.0\Homework2.AssemblyInfo.cs
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\obj\Debug\netcoreapp3.0\Homework2.dll
+D:\Homework2\strings-arrays-andrei747\Homework2\Homework2\obj\Debug\netcoreapp3.0\Homework2.pdb
