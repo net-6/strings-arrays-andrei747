@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Homework2\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj": {}
+    "D:\\Homework\\basics-andrei747\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj": {}
   },
   "projects": {
-    "D:\\Homework2\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj": {
+    "D:\\Homework\\basics-andrei747\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Homework2\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj",
+        "projectUniqueName": "D:\\Homework\\basics-andrei747\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj",
         "projectName": "Homework2",
-        "projectPath": "D:\\Homework2\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj",
+        "projectPath": "D:\\Homework\\basics-andrei747\\strings-arrays-andrei747\\Homework2\\Homework2\\Homework2.csproj",
         "packagesPath": "C:\\Users\\Andrei\\.nuget\\packages\\",
-        "outputPath": "D:\\Homework2\\strings-arrays-andrei747\\Homework2\\Homework2\\obj\\",
+        "outputPath": "D:\\Homework\\basics-andrei747\\strings-arrays-andrei747\\Homework2\\Homework2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andrei\\AppData\\Roaming\\NuGet\\NuGet.Config",
