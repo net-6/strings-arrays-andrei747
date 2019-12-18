@@ -3,6 +3,9 @@ using System.Linq;
 using System.Globalization;
 using Homework2.Strings;
 
+
+
+
 namespace Homework2
 {
     
@@ -10,14 +13,14 @@ namespace Homework2
     {
          static void Main(string[] args)
          {
-           FirstStrings home1 = new FirstStrings();
-            home1.Problem1();
-            FirstStrings home2 = new FirstStrings();
-            home2.Problem2();
-            FirstStrings home3 = new FirstStrings();
-            home3.Problem3();
-            FirstStrings home4 = new FirstStrings();
-            home4.Problem4();
+            FirstStrings home1 = new FirstStrings();
+              home1.Problem1();
+              FirstStrings home2 = new FirstStrings();
+              home2.Problem2();
+              FirstStrings home3 = new FirstStrings();
+              home3.Problem3();
+              FirstStrings home4 = new FirstStrings();
+              home4.Problem4();
             FirstStrings home5 = new FirstStrings();
             home5.Problem5();
             FirstStrings home6 = new FirstStrings();
@@ -64,9 +67,46 @@ namespace Homework2
             home26.Problem26();
             FirstStrings home27 = new FirstStrings();
             home27.Problem27();
+
+            //Arrays
+             var cc1 = new FirstArrays();
+             cc1.Problem1();
+             var cc2 = new FirstArrays();
+             cc2.Problem2();
+            var cc3 = new FirstArrays();
+            cc3.Problem3();
+            var cc4 = new FirstArrays();
+            cc4.Problem4();
+            var cc5 = new FirstArrays();
+           cc5.Problem5();
+            var cc6 = new FirstArrays();
+            cc6.Problem6();
+            var cc7 = new FirstArrays();
+            cc7.Problem7();
+            var cc8 = new FirstArrays();
+            cc8.Problem8();
+            var cc9 = new FirstArrays();
+            cc9.Problem9();
+            var cc10 = new FirstArrays();
+            cc10.Problem10();
+            var cc11 = new FirstArrays();
+            cc11.Problem11();
+            var cc12 = new FirstArrays();
+            cc12.Problem12();
+            var cc13 = new FirstArrays();
+            cc13.Problem13();
+            var cc14 = new FirstArrays();
+            cc14.Problem14();
+            var cc15 = new FirstArrays();
+            cc15.Problem15();
+            var cc16 = new FirstArrays();
+            cc16.Problem16();
+
+
+
         }
     }
-   }
+}
     
 
 
