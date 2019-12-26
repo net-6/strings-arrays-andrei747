@@ -5,6 +5,8 @@ using System.Linq;
 using System.Globalization;
 using System.Security;
 
+
+
 namespace Homework2.Strings
 {
     public class FirstStrings
@@ -53,16 +55,25 @@ namespace Homework2.Strings
         {
             Console.WriteLine("Type your text");
             string s1 = Console.ReadLine();
+            int n = 0;
             char [] ch = s1.ToCharArray();
-            for(int i = 0; i < s1.Length; i++)
-            {
-                for(i = 0; i < 4; i++)
+                                       
+                for(int i = 0; i < 4; i++)
                 {
-                   
-
-                }
-             
-            }
+                    if(Char.IsUpper(ch[i]))
+                    {
+                       n += 1;
+                    }
+                    if(n > 1)
+                    {
+                        string s2 = s1.ToUpper();
+                        Console.WriteLine($"The new word is: {s2}");
+                    }
+                    else
+                    {
+                    Console.WriteLine($"{s1}");
+                    }
+                }           
 
         }
         // Write a method that to remove a newline.
@@ -73,16 +84,23 @@ namespace Homework2.Strings
             Console.WriteLine("Remove line: " + s1.Replace("/n", String.Empty));
 
         }
-        /*Write a method to display formatted text (width=50) as output. For example: 
-       If I have a text that's 134 characters long, the formatted string should have maximum
-           of 50 characters per line. In this case we will have 3 lines of text.*/
+        //Write a method to display formatted text (width=50) as output. For example: 
+      // If I have a text that's 134 characters long, the formatted string should have maximum
+           //of 50 characters per line. In this case we will have 3 lines of text.
 
        public void Problem7()
        {
            Console.WriteLine("Write something");
-           string s1 = Console.ReadLine();                     
-           Console.WriteLine(s1); ///in progress
-
+           string s1 = Console.ReadLine();            
+            StringBuilder sb = new StringBuilder(s1);
+            for(int i = 0; i < sb.Length; i++)
+            {
+                if(i % 50 == 0)
+                {
+                    sb.Insert(i,"\n");
+                }
+            }
+            Console.WriteLine(sb.ToString());
 
        }
        // Write a method that formats a number with a percentage
@@ -171,13 +189,13 @@ namespace Homework2.Strings
            }
 
        }
-       /* Clean the text
-       You will get a text from where you will need to clean the text because it contains a lot of strange
-       characters that don’t belong there( ^ <, > &+ @%$)```
-       Input:
-          Hi^>there<<I’m+ telling%%you, you &need% to$ do& your $homeworks.@Hate ^me^ %now% and %thank% me &later.
-       Output:
-         Hi there I’m telling you, you need to do your homeworks.Hate me now and thank me later.*/
+       // Clean the text
+       //You will get a text from where you will need to clean the text because it contains a lot of strange
+       //characters that don’t belong there( ^ <, > &+ @%$)```
+       //Input:
+       //   Hi^>there<<I’m+ telling%%you, you &need% to$ do& your $homeworks.@Hate ^me^ %now% and %thank% me &later.
+      // Output:
+        // Hi there I’m telling you, you need to do your homeworks.Hate me now and thank me later.
        public void Problem14()
        {
            string s1 = "Hi^>there<<I’m+ telling%%you, you &need% to$ do& your $homeworks.@Hate ^me^ %now% and %thank% me &later.";
@@ -188,15 +206,15 @@ namespace Homework2.Strings
            }
 
        }
-       /*## Ing, ly
-        Write a method to add 'ing' at the end of a given string (length should be at least 3). 
-        If the given string already ends with 'ing' then add 'ly' instead. If the string length of 
-        the given string is less than 3, leave it unchanged.
-             ```
-           Input : 'abc'
-           Output : 'abcing' 
-           Input : 'string'
-           Output: 'stringly'*/
+       //## Ing, ly
+       // Write a method to add 'ing' at the end of a given string (length should be at least 3). 
+        //If the given string already ends with 'ing' then add 'ly' instead. If the string length of 
+        //the given string is less than 3, leave it unchanged.
+         //    ```
+          // Input : 'abc'
+           //Output : 'abcing' 
+          // Input : 'string'
+          // Output: 'stringly'
        public void Problem15()
        {
            string s1 = Console.ReadLine();
@@ -216,69 +234,74 @@ namespace Homework2.Strings
                Console.WriteLine(s1 + "ly");
            }
        }
-       /*## Obfucate Email
-       You have some text that contains your email address.And you want to hide that.You decide to censor
-        your email: to replace all characters in it with asterisks ('*') except the domain.
-         Assume your email address will always be in format[username]@[domain]. You need to replace the
-         username with asterisks of equal number of letters and keep the domain unchanged.
-         You will get as input the email address you need to obfuscate
+       ///## Obfucate Email
+      // You have some text that contains your email address.And you want to hide that.You decide to censor
+       // your email: to replace all characters in it with asterisks ('*') except the domain.
+        // Assume your email address will always be in format[username]@[domain]. You need to replace the
+        // username with asterisks of equal number of letters and keep the domain unchanged.
+        // You will get as input the email address you need to obfuscate
 
-              ```
-            Input: awesome @dotnet.com
-            Output: *******@dotnet.com*/
+          //    ```
+            //Input: awesome @dotnet.com
+           // Output: *******@dotnet.com
        public void Problem16()
        {
            Console.WriteLine("Type email");
-           string s1 = Console.ReadLine();          
-           string stars = "";
-           for (int i = 0; i < s1.Length; i++) 
-               stars += "*";
-           {                
-               if (s1.Contains("@"))
-               {                   
-                   s1.Replace("*", "");
-                   Console.WriteLine(stars + s1);///in progress
-               }
-           }                                       
+           string s1 = Console.ReadLine();
+            char[] ch = s1.ToCharArray();            
+           for (int i = 0; i < s1.Length; i++)
+               
+           {
+                if (ch[i].ToString() != "@")
+                {
+                    ch[i] = char.Parse("*");
 
-       }
-       /*## Re-string
-       Write a method to get a string made of the first 2 and the last 2 chars from a given a string.
-           If the string length is less than 2, return instead of the empty string. 
-             ```
-                 Sample String : “w3resource”
-                    Expected Result :”'w3ce”
-                     Sample String :”w3”
-                  Expected Result : “w3w3”
-                  Sample String : “w”
-               Expected Result : Empty String*/
+                }
+                else
+                {
+                    break;
+                }
+               
+           }
+            Console.WriteLine(ch);
+        }
+       //## Re-string
+       //Write a method to get a string made of the first 2 and the last 2 chars from a given a string.
+          // If the string length is less than 2, return instead of the empty string. 
+           //  ```
+             //    Sample String : “w3resource”
+            //        Expected Result :”'w3ce”
+             //        Sample String :”w3”
+              //    Expected Result : “w3w3”
+              //    Sample String : “w”
+             //  Expected Result : Empty String
        public void Problem17()
        {
            Console.WriteLine("type something");
            string s1 = Console.ReadLine();
-           for (int i = 0; i < s1.Length; i++)
+            char[] ch = s1.ToCharArray();
+           for (int i = 0; i < ch.Length; i++)
            {
-               if (s1.Length < 2)
+               if (ch.Length < 2)
                {
-                   Console.WriteLine(String.IsNullOrEmpty(s1));
+                   Console.WriteLine("Empty String",string.Empty);
                }
-               else if (s1.Length > 2)
+               else if (ch.Length > 2)
                {
-                   string s3 = s1.Substring(0, 2);
-                   string s4 = s1.LastIndexOf(i);
-                   Console.WriteLine(s3 + s4);//in progress
-
-
+                    string s2 = s1.Substring(0, 2);
+                    string s3 = s1.Substring(s1.Length - 2);//nice code
+                    Console.WriteLine(s2 + s3);
+                                         
                }
            }
 
        }
-       /*## Replace Char
-       Write a method to get a string from a given string where all occurrences of its 
-           first char have been changed to '$', except the first char itself.
-           ```
-         Sample String : 'restart'
-          Expected Result : 'resta$t'*/
+       //## Replace Char
+      // Write a method to get a string from a given string where all occurrences of its 
+        //   first char have been changed to '$', except the first char itself.
+       //    ```
+       //  Sample String : 'restart'
+        //  Expected Result : 'resta$t'
 
        public void Problem18()
        {
@@ -287,16 +310,17 @@ namespace Homework2.Strings
            char[] ch = s1.ToCharArray();
            for(int i = 0; i < ch.Length; i++)
            {
-               int index = 0;
-               index = i;// in progress
-
+                string s2 = s1.Replace(ch[0].ToString(), "$");//replace the char
+                string s4 = s2.Remove(0,1);//remove the first char from the replaced string
+                string s3 = s1.Remove(1,ch.Length - 1);//remove the rest of the chars except first
+                Console.WriteLine(s3 + s4);//concat 
            }
        }
-       /*- Write a method to get a single string from two given strings, 
-       separated by a space and swap the first two characters of each string.
-           ```
-         Input: 'abc', 'xyz' 
-           Output: 'xyc abz'*/
+       // Write a method to get a single string from two given strings, 
+       //separated by a space and swap the first two characters of each string.
+        //   ```
+       //  Input: 'abc', 'xyz' 
+        //   Output: 'xyc abz'
        public void Problem19()
        {
            Console.WriteLine("Write word 'one'");
@@ -305,22 +329,36 @@ namespace Homework2.Strings
            string s2 = Console.ReadLine();
            Console.WriteLine(s2 + " " + s1);
        }
-       /* Write a method to find the first appearance of the substring 'not' and 'poor' from a given string, 
-       if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with 'good'. 
-           Return the resulting string.
-              ```
-             Input: 'The lyrics is not that poor!'
-            Output : 'The lyrics is poor!'
-             Input  : 'The lyrics is good!'
-             Output : 'The lyrics is poor!'*/
+       // Write a method to find the first appearance of the substring 'not' and 'poor' from a given string, 
+      // if 'not' follows the 'poor', replace the whole 'not'...'poor' substring with <<<<'good'.>>>>>???? 
+        //   Return the resulting string.
+        //      ```
+         //    Input: 'The lyrics is not that poor!'
+         //   Output : 'The lyrics is poor!'///i don't understand---or poor or good????????
+          //   Input  : 'The lyrics is good!'
+           //  Output : 'The lyrics is poor!'
        public void Problem20()
        {
            Console.WriteLine("Type");
-           string s1 = Console.ReadLine();           
-           Console.WriteLine(s1.Replace("poor", "good"),s1.Replace("not","good"));//in progress                                               
+           string s1 = Console.ReadLine();
+            if (s1.Contains("good"))
+            {
+                string s2 = s1.Replace("good", "poor");
+                Console.WriteLine(s2);
+            }
+            if (s1.Contains("not") && s1.IndexOf("not") < s1.IndexOf("poor"))
+            {
+               string s2 = s1.Substring(0, s1.IndexOf("not")) + //substringul "not" replaced with
+                    "good" + ///good
+                    s1.Substring(s1.IndexOf("poor") + 4);//substringul "poor" replaced with empty space.. if the word was "replace"
+                                                         // s1.Substring(s1.IndexOf("replace") + 7) -replace has 7 letters
+
+                Console.WriteLine(s2);
+            }         
+                                                        
        }
-       /*## Longest word
-       Write a method that takes a list of words and returns the length of the longest one.*/
+       //## Longest word
+      // Write a method that takes a list of words and returns the length of the longest one.
        public void Problem21()
        {
            Console.WriteLine("Longest word");
@@ -341,28 +379,40 @@ namespace Homework2.Strings
            Console.WriteLine(s1);
 
        }
-       /*## Last Part
-       Write a method to get the last part of a string before a specified character.
-                ```
-              Input :  https://www.siit.com/net-exercises
-             -
-           Output:  https://www.siit.com/net */
+       //## Last Part
+      // Write a method to get the last part of a string before a specified character.
+            //    ```
+           //   Input :  https://www.siit.com/net-exercises
+           //  -
+          // Output:  https://www.siit.com/net 
 
        public void Problem22()
        {
            Console.WriteLine("Last part");
            string s1 = Console.ReadLine();
-           string [] s2 = s1.Split('-');
-           foreach(string s3 in s2)
-           {
-               Console.WriteLine(s3.Remove(7,4));//in progress
-           }
+            char[] ch = s1.ToCharArray();
+            for(int i = 0; i < s1.Length; i++)
+            {
+                string stopAt = "-";
+                if (!String.IsNullOrWhiteSpace(s1))
+                {
+                    int n = s1.IndexOf(stopAt, StringComparison.Ordinal);
+
+                    if (n > 0)
+                    {
+                        string s2 =  s1.Substring(0, n);
+                        Console.WriteLine(s2);
+                    }
+                }
+                
+            }
+            
        }
-       /*- Write a method to check whether a string starts with specified characters
-                  ```
-                     input: awesome string
-                             a
-                 output : Yes, starts with a*/
+       //- Write a method to check whether a string starts with specified characters
+       //           ```
+          //           input: awesome string
+           //                  a
+             //    output : Yes, starts with a
 
        public void Problem23()
        {
@@ -371,48 +421,88 @@ namespace Homework2.Strings
            Console.WriteLine("Yes, starts with " + ch);           
        }
 
-       /*-  Write a method to count occurrences of a substring in a string
-                ```
-                  input: alabala portocala
-                        ala
-                   output : 3*/
-       public void Problem24()
-       {
-           string s1 = Console.ReadLine();          
-           string s2 = "ala";           
-           Console.WriteLine(s2);//in progress              
-       }
-       /*- Write a method to swap comma and dot in a string. 
-                ```
-                  Input: "32.054,23"
-                Output: "32,054.23"*/
+        //-  Write a method to count occurrences of a substring in a string
+        //        ```
+        //         input: alabala portocala
+        //              ala
+        //         output : 3
+        public void Problem24()
+        {
+            string s1 = Console.ReadLine();
+            string s2 = "ala";
+            var arr = s1.Split(new char[] { ' ' }); //split  a new char
+            var count = Array.FindAll(arr, k => k.Equals(s2.Trim())).Length;//findAll ask for a string k is a string and i use lambda =>
+            Console.WriteLine(count);
+        }
+
+            //- Write a method to swap comma and dot in a string. 
+              //       ```
+               //        Input: "32.054,23"
+                //     Output: "32,054.23"
        public void Problem25()
        {
-           int [] num1 = {32.054,23}; //in progress
+            Console.WriteLine("Insert the string: ");
+            string str = Console.ReadLine();
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ',' && str[i] != '.')
+                {
+                    sb.Append(str[i]);
+                }
+                else if (str[i] == ',')
+                {
+                    sb.Append('.');
+                }
+                else
+                {
+                    sb.Append(',');
+                }
+            }
+            Console.WriteLine(sb);
 
        }
-       //- Write a method to remove spaces from a given string.
-       public void Problem26()
-       {
-           string s1 = Console.ReadLine();
-           string s2 = s1.Trim();
-           Console.WriteLine(s2);
+            //- Write a method to remove spaces from a given string.
+            public void Problem26()
+            {
+                string s1 = Console.ReadLine();
+                string s2 = s1.Trim();
+                Console.WriteLine(s2);
 
-       }
+            }
 
-        /*## Palindrome
-        Check if a string is palindrome(same value read from left to right and right to left)
-        Ex: alabala -> True*/
+             //## Palindrome
+             //Check if a string is palindrome(same value read from left to right and right to left)
+             //Ex: alabala -> True
 
-       public void Problem27()
-       {
-           string s1 = Console.ReadLine();//in progresss
+        public void Problem27()
+        {
+            
+            string s1 = Console.ReadLine();
+            string first = s1.Substring(0, s1.Length / 2);
+            char[] arr = s1.ToCharArray();
 
-       }
-       
+            Array.Reverse(arr);
+
+            string temp = new string(arr);
+            string second = temp.Substring(0, temp.Length / 2);
+
+            bool b = s1.Equals(temp, StringComparison.OrdinalIgnoreCase);
+            if (b == true)
+            {
+                Console.WriteLine("" + s1 + " is a Palindrome!");
+            }
+            else
+            {
+                Console.WriteLine(" " + s1 + " is not a Palindrome!");
+            }
+
+        }
+
 
     }
 }
+
         
 
 

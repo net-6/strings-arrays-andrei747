@@ -13,7 +13,7 @@ namespace Homework2
     {
          static void Main(string[] args)
          {
-            FirstStrings home1 = new FirstStrings();
+            /*FirstStrings home1 = new FirstStrings();
               home1.Problem1();
               FirstStrings home2 = new FirstStrings();
               home2.Problem2();
@@ -27,7 +27,7 @@ namespace Homework2
             home6.Problem6();
             FirstStrings home7 = new FirstStrings();
             home7.Problem7();           
-            FirstStrings home8 = new FirstStrings();
+            /*FirstStrings home8 = new FirstStrings();
             home8.Problem8();
             FirstStrings home9 = new FirstStrings();
             home9.Problem9();
@@ -66,9 +66,9 @@ namespace Homework2
             FirstStrings home26 = new FirstStrings();
             home26.Problem26();
             FirstStrings home27 = new FirstStrings();
-            home27.Problem27();
+            home27.Problem27();*/
 
-            //Arrays
+            /*Arrays
              var cc1 = new FirstArrays();
              cc1.Problem1();
              var cc2 = new FirstArrays();
@@ -100,7 +100,7 @@ namespace Homework2
             var cc15 = new FirstArrays();
             cc15.Problem15();
             var cc16 = new FirstArrays();
-            cc16.Problem16();
+            cc16.Problem16();*/
 
 
 
